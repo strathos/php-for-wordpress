@@ -14,11 +14,11 @@ if [ ! -z "${PGID}" ]; then
 fi
 
 if [ ! -z "${PHP_UPLOAD_MAX_FILESIZE}" ]; then
-  sed -i 's/upload_max_filesize = 100M/upload_max_filesize = ${PHP_UPLOAD_MAX_FILESIZE}/' ${PHP_INI_DIR}/php.ini
+  sed -i "s/upload_max_filesize = 2M/upload_max_filesize = ${PHP_UPLOAD_MAX_FILESIZE}/" ${PHP_INI_DIR}/php.ini
 fi
 
 if [ ! -z "${PHP_POST_MAX_SIZE}" ]; then
-  sed -i 's/post_max_size = 64M/post_max_size = ${PHP_POST_MAX_SIZE}/' ${PHP_INI_DIR}/php.ini
+  sed -i "s/post_max_size = 8M/post_max_size = ${PHP_POST_MAX_SIZE}/" ${PHP_INI_DIR}/php.ini
 fi
 
 # usage: file_env VAR [DEFAULT]
