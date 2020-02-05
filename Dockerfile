@@ -11,6 +11,8 @@ RUN apk add --no-cache \
 # UID and GID changing needs shadow
 		shadow
 
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
 # install the PHP extensions we need (https://make.wordpress.org/hosting/handbook/handbook/server-environment/#php-extensions)
 RUN set -ex; \
 	\
